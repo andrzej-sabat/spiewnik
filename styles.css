@@ -48,6 +48,7 @@ body {
     overflow-y: auto;
     transition: left 0.3s ease; /* Animacja przesuwania menu */
     z-index: 1000; /* Ustaw wyższy z-index, aby menu było nad nagłówkiem */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3); /* Dodanie cienia */
 }
 
 .menu-open .menu {
@@ -57,15 +58,29 @@ body {
 .menu ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .menu ul li {
-    padding: 15px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #444; /* Dodanie linii oddzielającej elementy */
+}
+
+.menu ul li:last-child {
+    border-bottom: none; /* Usunięcie linii dla ostatniego elementu */
 }
 
 .menu ul li a {
     color: white;
     text-decoration: none;
+    display: block; /* Umożliwia kliknięcie całego obszaru */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu ul li a:hover, .menu ul li a:focus {
+    background-color: #575757; /* Zmiana koloru tła przy najechaniu */
+    color: #ffd700; /* Zmiana koloru tekstu przy najechaniu */
+    padding-left: 30px; /* Efekt przesunięcia przy najechaniu */
 }
 
 .menu-toggle {
@@ -102,6 +117,7 @@ body {
         height: 100%;
         left: 0;
         top: 0; /* Ustawienie menu od góry strony */
+        box-shadow: none; /* Usunięcie cienia dla większych ekranów */
     }
 
     .menu-toggle {
