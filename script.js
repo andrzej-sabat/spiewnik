@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var menu = document.getElementById('menu');
     var body = document.body;
 
+
     menuToggle.addEventListener('click', function() {
         body.classList.toggle('menu-open');
     });
@@ -21,4 +22,5 @@ document.addEventListener('DOMContentLoaded', function() {
             body.classList.remove('menu-open');
         });
     });
+	
 });
