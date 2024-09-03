@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 1.2em;
+    margin: 5px 0 0;
+    color: #555;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu {
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 15px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+.menu-open .menu {
+    left: 0;
+}
+
+.menu-open .menu-toggle {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.content {
+    margin-left: 0;
+    padding: 20px;
+    flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+        position: static;
+        width: 250px;
+        left: 0;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .content {
+        margin-left: 250px;
+    }
+}
